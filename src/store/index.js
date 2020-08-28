@@ -26,7 +26,9 @@ const mutations = {
   }
 }
 const actions = {
-
+  asyncAdd (context, payload) {
+    context.commit('add', payload)
+  }
 }
 
 const store = new Vuex.Store({

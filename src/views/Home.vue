@@ -1,9 +1,7 @@
 <template>
   <div>
     <div class="item">当前数量是{{count}} <button @click="add">增加</button></div>
-    <div class="list">
-      <div class="item"></div>
-    </div>
+    <button @click="asyncAdd">异步操作+10</button>
   </div>
 </template>
 
@@ -22,6 +20,11 @@ export default {
   methods: {
     add () {
       this.$store.commit('add', 1)
+    },
+    asyncAdd () {
+      setTimeout(() => {
+        this.$store.dispatch('asyncAdd', 10)
+      }, 1000)
     }
   }
 }

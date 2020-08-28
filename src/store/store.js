@@ -59,4 +59,43 @@ function install (_Vue) {
   })
 }
 
+export const mapState = (stateArr) => { // {age:fn}
+  const obj = {}
+  stateArr.forEach(stateName => {
+    obj[stateName] = function () {
+      return this.$store.state[stateName]
+    }
+  })
+  return obj
+}
+
+export function mapGetters (gettersArr) {
+  const obj = {}
+  gettersArr.forEach(getterName => {
+    obj[getterName] = function () {
+      return this.$store.getters[getterName]
+    }
+  })
+  return obj
+}
+export function mapMutations (obj) {
+  const res = {}
+  Object.entries(obj).forEach(([key, value]) => {
+    res[key] = function (...args) {
+      this.$store.commit(value, ...args)
+    }
+  })
+  return res
+}
+
+export function mapActions (obj) {
+  const res = {}
+  Object.entries(obj).forEach(([key, value]) => {
+    res[key] = function (...args) {
+      this.$store.dispatch(value, ...args)
+    }
+  })
+  return res
+}
+
 export default { Store, install }
