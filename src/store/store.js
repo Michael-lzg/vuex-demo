@@ -1,10 +1,10 @@
 let Vue
 
 class Store {
-  constructor(options) {
+  constructor (options) {
     // 同样对vue强依赖 使用vue实现响应数据的更新
     this.state = new Vue({
-      data: options.state,
+      data: options.state
     })
     // this.state = options.state
     this.mutations = options.mutations
@@ -13,7 +13,7 @@ class Store {
     options.getters && this.handleGetters(options.getters)
   }
 
-  //为什么没有定义到构造器内部？因为每个实例可以公用这些方法
+  // 为什么没有定义到构造器内部？因为每个实例可以公用这些方法
   // 为mutations actions getters为每个实例化单独享有的
 
   // 声明为箭头函数，why？为了直接可以使用this.mutations,this.state
@@ -25,11 +25,12 @@ class Store {
     this.actions[type](
       {
         commit: this.commit,
-        state: this.state,
+        state: this.state
       },
       arg
     )
   }
+
   // getters为参数 而this.getters是实例化的
   handleGetters (getters) {
     this.getters = {}
@@ -40,7 +41,7 @@ class Store {
       Object.defineProperty(this.getters, key, {
         get: () => {
           return getters[key](this.state)
-        },
+        }
       })
     })
   }
@@ -54,7 +55,7 @@ function install (_Vue) {
       if (this.$options.store) {
         Vue.prototype.$store = this.$options.store
       }
-    },
+    }
   })
 }
 
