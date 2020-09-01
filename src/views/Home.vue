@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="item">当前数量是{{count}} <button @click="add">增加</button></div>
+    <div class="item">首页当前数量是{{count}} <button @click="add">增加</button></div>
     <button @click="asyncAdd">异步操作+10</button>
+    <button @click="to404">去404</button>
   </div>
 </template>
 
@@ -25,6 +26,9 @@ export default {
       setTimeout(() => {
         this.$store.dispatch('asyncAdd', 10)
       }, 1000)
+    },
+    to404 () {
+      this.$router.push('/404')
     }
   }
 }

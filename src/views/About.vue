@@ -7,8 +7,6 @@
 
 <script>
 import { mapGetters, mapActions } from '../store/store'
-console.log(mapGetters(['getCount']))
-console.log(mapActions)
 export default {
   data () {
     return {
