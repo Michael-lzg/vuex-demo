@@ -1,4 +1,4 @@
-let findEle = (parent, type) => {
+const findEle = (parent, type) => {
   return parent.tagName.toLowerCase() === type
     ? parent
     : parent.querySelector(type)
@@ -10,13 +10,13 @@ const trigger = (el, type) => {
   el.dispatchEvent(e)
 }
 
-const vEmoji = {
+const emoji = {
   bind: function (el, binding, vnode) {
     var regRule = /[^\u4E00-\u9FA5|\d|\a-zA-Z|\r\n\s,.?!，。？！…—&$=()-+/*{}[\]]|\s/g
-    let $inp = findEle(el, 'input')
+    const $inp = findEle(el, 'input')
     el.$inp = $inp
     $inp.handle = function () {
-      let val = $inp.value
+      const val = $inp.value
       $inp.value = val.replace(regRule, '')
 
       trigger($inp, 'input')
@@ -28,4 +28,4 @@ const vEmoji = {
   }
 }
 
-export default vEmoji
+export default emoji

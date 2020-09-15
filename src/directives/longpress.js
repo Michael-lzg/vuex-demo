@@ -18,7 +18,7 @@ const vLongpress = { // 名字爱取啥取啥
     let pressTimer = null
     // 定义函数处理程序
     // 创建计时器（ 1秒后执行函数 ）
-    let start = (e) => {
+    const start = (e) => {
       if (e.type === 'click' && e.button !== 0) {
         return
       }
@@ -30,7 +30,7 @@ const vLongpress = { // 名字爱取啥取啥
       }
     }
     // 取消计时器
-    let cancel = (e) => {
+    const cancel = (e) => {
       // 检查计时器是否有值
       if (pressTimer !== null) {
         clearTimeout(pressTimer)

@@ -1,4 +1,4 @@
-const vCopy = { // 名字爱取啥取啥
+const copy = { // 名字爱取啥取啥
   /*
     bind 钩子函数，第一次绑定时调用，可以在这里做初始化设置
     el: 作用的 dom 对象
@@ -44,4 +44,4 @@ const vCopy = { // 名字爱取啥取啥
   }
 }
 
-export default vCopy
+export default copy
