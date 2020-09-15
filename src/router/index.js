@@ -4,6 +4,7 @@ import MyRouter from './myRouter'
 import Home from '../views/Home.vue'
 import about from '../views/About.vue'
 import noFound from '../views/404.vue'
+import list from '../views/list.vue'
 
 Vue.use(MyRouter)
 
@@ -19,6 +20,10 @@ const routes = [
   {
     path: '/404',
     component: noFound
+  },
+  {
+    path: '/list',
+    component: list
   }
 ]
 

@@ -1,4 +1,4 @@
-const vLongpress = { // 名字爱取啥取啥
+const longpress = { // 名字爱取啥取啥
   /*
     bind 钩子函数，第一次绑定时调用，可以在这里做初始化设置
     el: 作用的 dom 对象
@@ -26,7 +26,7 @@ const vLongpress = { // 名字爱取啥取啥
         pressTimer = setTimeout(() => {
           // 执行函数
           handler()
-        }, 2000)
+        }, 1000)
       }
     }
     // 取消计时器
@@ -50,15 +50,17 @@ const vLongpress = { // 名字爱取啥取啥
     el.addEventListener('mouseout', cancel)
     el.addEventListener('touchend', cancel)
     el.addEventListener('touchcancel', cancel)
+  },
+  // 当传进来的值更新的时候触发
+  componentUpdated (el, { value }) {
+    el.$value = value
+  },
+  // 指令与元素解绑的时候，移除事件绑定
+  unbind (el) {
+    el.removeEventListener('click', el.handler)
   }
-  // // 当传进来的值更新的时候触发
-  // componentUpdated (el, { value }) {
-  //   el.$value = value
-  // },
-  // // 指令与元素解绑的时候，移除事件绑定
-  // unbind (el) {
-  //   el.removeEventListener('click', el.handler)
-  // }
 }
 
-export default vLongpress
+// https://juejin.im/post/6844903668429357063
+
+export default longpress

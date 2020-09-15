@@ -4,6 +4,10 @@ import router from './router'
 import store from './store/index'
 import directives from './directives/index'
 
+import Vconsole from 'vconsole'
+const vConsole = new Vconsole()
+
+Vue.use(vConsole)
 Vue.use(directives)
 
 Vue.config.productionTip = false
