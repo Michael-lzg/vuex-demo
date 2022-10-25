@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
+    <div id="nav">
+      <router-link to="/">Homesdsdsddddddddddddd</router-link> |
       <router-link to="/about">About</router-link>
-    </div> -->
+    </div>
     <router-view />
   </div>
 </template>
@@ -40,6 +40,8 @@ body {
 
     &.router-link-exact-active {
       color: #42b983;
+      background-color: #fff;
+      background-color: #fff;
     }
   }
 }

@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store/index'
 import directives from './directives/index'
+import directives from './directives/index'
+import directives from './directives/index'
 
 import Vconsole from 'vconsole'
 const vConsole = new Vconsole()
